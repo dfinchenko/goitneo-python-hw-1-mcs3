@@ -38,13 +38,16 @@ def get_birthdays_per_week(users):
     for day, users in birthdays.items():
         print(f'{day}: {", ".join(users)}')
 
+def main():
+    users = [
+        {"name": "Bill Gates", "birthday": datetime(1955, 10, 30)}, # День народженння не в найближчі 7 днів
+        {"name": "John Doe", "birthday": datetime(1988, 10, 22)},  # День народження в неділю
+        {"name": "Jane Doe", "birthday": datetime(1990, 10, 18)},  # День народження в середу
+        {"name": "Taylor Otwell", "birthday": datetime(1990, 10, 18)},  # День народження в середу
+    ]
 
-# Тестування
-users = [
-    {"name": "Bill Gates", "birthday": datetime(1955, 10, 30)}, # День народженння не в найближчі 7 днів
-    {"name": "John Doe", "birthday": datetime(1988, 10, 22)},  # День народження в неділю
-    {"name": "Jane Doe", "birthday": datetime(1990, 10, 18)},  # День народження в середу
-    {"name": "Taylor Otwell", "birthday": datetime(1990, 10, 18)},  # День народження в середу
-]
-
-get_birthdays_per_week(users)
+    get_birthdays_per_week(users)
+    
+# Точка входу
+if __name__ == "__main__":
+    main()
